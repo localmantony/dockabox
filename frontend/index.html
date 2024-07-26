@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dockerfile Generator</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Dockerfile Generator</h1>
+        
+        <div class="form-group">
+            <label for="os">OS:</label>
+            <select id="os">
+                <option value="kali">Kali</option>
+                <option value="centos">CentOS</option>
+                <option value="ubuntu">Ubuntu</option>
+                <option value="debian">Debian</option>
+                <option value="fedora">Fedora</option>
+                <option value="apline">Alpine</option>
+                <option value="rhel">Red Hat</option>
+                <option value="suse">SUSE</option>
+                <option value="arch">Arch</option>
+                <option value="mint">Mint</option>
+                <option value="manjaro">Manjaro</option>
+            </select>
+        </div>
+        
+        <div class="form-group">
+            <label for="database">Database:</label>
+            <select id="database">
+                <option value="none">None</option>
+                <optgroup label="SQL Databases">
+                    <option value="mysql">MySQL</option>
+                    <option value="postgres">PostgreSQL</option>
+                    <option value="mariadb">MariaDB</option>
+                    <option value="sqlite">SQLite</option>
+                    <option value="oracle">Oracle Database</option>
+                    <option value="db2">IBM Db2</option>
+                </optgroup>
+                <optgroup label="NoSQL Databases">
+                    <option value="mongodb">MongoDB</option>
+                    <option value="cassandra">Cassandra</option>
+                    <option value="redis">Redis</option>
+                    <option value="couchdb">CouchDB</option>
+                    <option value="elasticsearch">Elasticsearch</option>
+                    <option value="dynamodb">DynamoDB</option>
+                    <option value="rethinkdb">RethinkDB</option>
+                    <option value="firebase">Firebase Realtime Database</option>
+                </optgroup>
+            </select>
+        </div>
+        
+        <div class="form-group">
+            <label for="webserver">Webserver:</label>
+            <select id="webserver">
+                <option value="nginx">Nginx</option>
+                <option value="apache">Apache</option>
+                <option value="lighttpd">Lighttpd</option>
+                <option value="caddy">Caddy</option>
+                <option value="tomcat">Tomcat</option>
+                <option value="jetty">Jetty</option>
+                <option value="openlitespeed">OpenLiteSpeed</option>
+                <option value="h2o">H2O</option>
+                <option value="cherokee">Cherokee</option>
+            </select>
+        </div>
+        
+        <div class="form-group">
+            <label for="command">Command to Run Server:</label>
+            <input type="text" id="command" value='["python3", "-m", "http.server", "8000"]'>
+        </div>
+        <br>
+        <button id="generate">Generate Dockerfile</button>
+        
+        <div class="dockerfile-box">
+            <h2>Generated Dockerfile</h2>
+            <pre id="dockerfile-content"></pre>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
